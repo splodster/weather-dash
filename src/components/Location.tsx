@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { IoMdPin } from "react-icons/io";
 
 const Location = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
@@ -22,9 +23,11 @@ const Location = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex items-center">
+      <IoMdPin size={20} />
       <p>
-        lat: {latitude}, lon:{longitude}
+        latitude: {latitude?.toPrecision(3)}, longitude:{" "}
+        {longitude?.toPrecision(3)}
       </p>
     </div>
   );
